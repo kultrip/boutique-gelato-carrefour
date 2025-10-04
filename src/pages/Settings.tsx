@@ -24,7 +24,7 @@ const Settings = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
-  const isAdmin = profile?.role === 'admin';
+  const isAdminOrStaff = ['admin', 'staff'].includes(profile?.role);
 
   useEffect(() => {
     fetchSettings();
